@@ -1,6 +1,13 @@
-app.factory('ClienteService', function($http, $rootScope, $location){
+app.factory('ProdutoService', function($http, $rootScope, $location){
     return {
 
+		getAll: function(){
+            return $http({
+                method: 'get',
+                url: 'ws/produto/getAll.php'
+            });
+        },
+	
         validarSenha: function(email, senha){
             return $http({
                 method: 'get',

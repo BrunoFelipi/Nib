@@ -1,7 +1,7 @@
 <?php
     include '../conexao.php';
-    $token = addslashes($_GET["token"]);
-    $sql = "SELECT id,email,nome FROM usuario where token = '$token'";
+    
+    $sql = "SELECT * FROM produto";
     $rs = mysqli_query($conexao, $sql);
 
     $json = array();
