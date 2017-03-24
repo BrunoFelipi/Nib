@@ -1,0 +1,100 @@
+<script type="text/javascript">
+$(document).ready(function() {
+    
+	$('select').material_select();
+    //$('#conteudo').focus();
+    //$('#tag').focus();
+    //$('#titulo').focus();
+    $(".button-collapse").sideNav();
+    $('.button-collapse').sideNav('hide');
+    //$("input#titulo, input#tag, textarea#conteudo").characterCounter();
+	
+});
+</script>
+
+<style media="screen">
+header, main, footer {
+    padding-left: 300px;
+}
+@media only screen and (max-width : 992px) {
+    header, main, footer {
+        padding-left: 0;
+    }
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+</style>
+
+<div class="footer-flex">
+	<!-- Header -->
+	<header>
+		<!--<nav class="nav-wrapper orange darken-4">-->
+		<nav class="nav-wrapper teal">
+			<div class="container">
+				<a href="" data-activates="slide-out" class="button-collapse show-on-small"><i class="material-icons">menu</i></a>
+				<ul id="slide-out" class="side-nav fixed">
+				<li>
+					<div class="userView">
+					  <!--<div class="background cyan accent-3">-->
+					  <div class="background">
+						<img src="">
+					  </div>
+					  <!--<a href="#!user"><img class="circle" src="resources/images/nibbles-2.png"></a>-->
+					  <a href="#!user"><img class="circle" src=""></a>
+					  <a href="#!name"><span class="white-text name">John Doe</span></a>
+					  <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+					</div>
+				</li>
+				<li class="active">
+					<a class="waves-effect" href="#/inicio">
+						<i class="material-icons">home</i>
+						Início
+					</a>
+				</li>
+				<li>
+					<a class="waves-effect" href="#/promocoes">
+						<i class="material-icons">loyalty</i>
+						Promoções
+					</a>
+				</li>				
+				<li>
+					<a class="waves-effect" href="#/cardapio">
+						<i class="material-icons">restaurant_menu</i>
+						Cardápio
+					</a>
+				</li>
+				<li>
+					<a class="waves-effect" href="#/usuarios">
+						<i class="material-icons">people</i>
+						Usuários
+					</a>
+				</li>
+				
+				<li>
+					<div class="divider"></div>
+				</li>
+				
+				<li>
+					<a class="waves-effect" href="#!">
+						<i class="material-icons">exit_to_app</i>
+						Sair
+					</a>
+				</li>
+				
+			  </ul>
+			</div>
+			<div class="nav-wrapper">
+				<a href="#/listar" class="brand-logo light center">TecNews Admin</a>
+			</div>
+		</nav>
+	</header>
+	
+	<!-- Main -->
+	<main>
+	
+	</main>
+</div>

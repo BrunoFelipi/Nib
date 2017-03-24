@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<!-- Metas -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<!-- MAPA -->
+		<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDky8bTysiAre9Otf-oYT7vXiv5fT5apg0"></script>
+
+		<!-- JQuery-->
+		<script src="js\jquery-3.1.0.min.js"></script>
+		<script src="js\jquery-ui.min.js"></script>
+
+		<!-- Materialize -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="css/materialize.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
+		<!-- Custom -->
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.mask.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+
+		<!-- JS -->
+		<script src="js/angular.min.js" type="text/javascript"></script>
+		<script src="js/angular-animate.min.js" type="text/javascript"></script>
+		<script src="js/angular-route.js" type="text/javascript"></script>
+
+		<!-- UiSlider -->
+		<link rel="stylesheet" href="css/nouislider.min.css">
+		<script src="js/nouislider.js" type="text/javascript"></script>
+
+		<!-- Config -->
+		<script src="config/app.js" type="text/javascript"></script>
+		<script src="config/route.js" type="text/javascript"></script>
+		<script src="config/run.js" type="text/javascript"></script>
+
+		<!-- Controllers -->
+		<script src="controllers/cardapioCtrl.js" type="text/javascript"></script>
+		<script src="controllers/inicioCtrl.js" type="text/javascript"></script>
+		<script src="controllers/promocoesCtrl.js" type="text/javascript"></script>
+		<script src="controllers/usuariosCtrl.js" type="text/javascript"></script>
+
+		<!-- Services -->
+		<script src="services/EmpresaService.js" type="text/javascript"></script>
+		<script src="services/ClienteService.js" type="text/javascript"></script>
+		<script src="services/PontoService.js" type="text/javascript"></script>
+		<script src="services/RelatorioService.js" type="text/javascript"></script>
+
+		<!-- toastr -->
+		<script src="https://unpkg.com/angular-toastr/dist/angular-toastr.tpls.js"></script>
+		<link rel="stylesheet" href="https://unpkg.com/angular-toastr/dist/angular-toastr.css" />
+	</head>
+
+	<body ng-app="app">
+		<ng-view></ng-view>
+	</body>
+</html>
