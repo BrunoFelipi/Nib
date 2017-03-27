@@ -1,7 +1,8 @@
 <script type="text/javascript">
 $(document).ready(function() {
-    
-	$('select').material_select();
+	
+    $('#pesquisa').focus();
+    $('select').material_select();
     //$('#conteudo').focus();
     //$('#tag').focus();
     //$('#titulo').focus();
@@ -95,6 +96,43 @@ img {
 	
 	<!-- Main -->
 	<main>
+		<br>
+        <div class="container">
+            <div class="row">
+
+                <h5 class="light">Usuários</h5>
+                <hr>
+                <br>
+
+                <div class="col s12 m12 l6">
+                    <div class="input-field">
+                        <input id="pesquisa" ng-model="pesquisa" placeholder="ID, Nome, Email, Celular" type="text" class="validate">
+                        <label for="pesquisa">Pesquisar</label>                        
+                        <p>Total de <b>{{totalEmailsCadastrados}}</b> emails cadastrados</p>
+                    </div>
+                </div>
+				
+				<table class="responsive-table">
+					<thead>
+						<tr>
+							<th>ID</th>						
+							<th>Nome</th>
+							<th>Email</th>
+							<th>Celular</th>                            
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="usu in usuarios | filter: pesquisa">                            
+							<td>{{usu.id}}</td>
+							<td>{{usu.nome}}</td>
+							<td>{{usu.email}}</td>
+							<td>{{usu.numeroCelular}}</td>
+						</tr>
+					</tbody>
+				</table>
+            </div>
+        </div>
+		
 	
 	</main>
 </div>
