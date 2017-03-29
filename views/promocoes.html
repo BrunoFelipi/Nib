@@ -1,14 +1,14 @@
 <script type="text/javascript">
 $(document).ready(function() {
     
+	$('#pesquisa').focus();
 	$('select').material_select();
     //$('#conteudo').focus();
     //$('#tag').focus();
     //$('#titulo').focus();
     $(".button-collapse").sideNav();
     $('.button-collapse').sideNav('hide');
-    //$("input#titulo, input#tag, textarea#conteudo").characterCounter();
-	
+    //$("input#titulo, input#tag, textarea#conteudo").characterCounter();	
 });
 </script>
 
@@ -95,6 +95,36 @@ img {
 	
 	<!-- Main -->
 	<main>
-	
+		<br>
+        <div class="container">
+            <div class="row">
+                <h5 class="light">Promoções</h5>
+                <hr>
+                <br>
+                <div class="col s12 m12 l6">
+                    <div class="input-field">
+                        <input id="pesquisa" ng-model="pesquisa" placeholder="ID, Nome, Descrição, Valor" type="text" class="validate">
+                        <label for="pesquisa">Pesquisar</label>                        
+                        <p>Total de <b>{{totalEmailsCadastrados}}</b> emails cadastrados</p>
+                    </div>
+                </div>
+			</div>
+				
+			<div class="row">
+				<div class="col s12 m4 l4" ng-repeat="promo in promocoes">
+					<div class="card small">
+						<div class="card-image">
+							<img src="resources/images/{{promo.imagemname}}">
+							<span class="card-title">{{promo.nome}}</span>																					
+						</div>
+						<div class="card-content">
+							<p>{{promo.descricao}}</p>
+							<b>R$ {{promo.valor}}</b>
+						</div>
+					</div>
+				</div>			  
+			</div>
+			
+        </div>		
 	</main>
 </div>

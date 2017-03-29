@@ -3,8 +3,15 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
 
 		getAll: function(){
             return $http({
-                method: 'get',
+                method: 'post',
                 url: 'ws/produto/getAll.php'
+            });
+        },
+	
+		getPromocaoAtiva: function(){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getPromocaoAtiva.php'
             });
         },
 	
