@@ -15,10 +15,11 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 	
-		getPromocaoAtiva: function(){
+		alterarPromoProduto: function(id, promo){
             return $http({
                 method: 'post',
-                url: 'ws/produto/getPromocaoAtiva.php'
+                url: 'ws/produto/alterarPromoProduto.php',
+				data: {id: id, promo: promo}
             });
         },
 	
