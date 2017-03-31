@@ -11,6 +11,8 @@ $(document).ready(function() {
     //$("input#titulo, input#tag, textarea#conteudo").characterCounter();	
 	
 	$('.tooltipped').tooltip({delay: 50});
+	$('.modal-trigger').leanModal();
+	
 	
 });
 </script>
@@ -29,11 +31,6 @@ img {
 	height: 100%;
 	width: 100%;
 }
-
-div.rodape {
-	padding-top: 5cm;
-}
-
 
 </style>
 
@@ -139,7 +136,7 @@ div.rodape {
 								<i class="material-icons">remove_circle_outline</i>
 							</a>
 
-							<a ng-click="visualizarUsuarios()" class="right waves-effect waves-light btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Visualizar Usuários">									
+							<a href="#modal1" ng-click="visualizarUsuarios()" class="right waves-effect waves-light btn modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Visualizar Usuários">									
 								<i class="material-icons">supervisor_account</i>
 							</a>
 							
@@ -156,6 +153,16 @@ div.rodape {
 				</div>			  
 			</div>
 			
+			<!-- Modal Structure -->
+			<div id="modal1" class="modal bottom-sheet">
+				<div class="modal-content">
+					<h4>Modal Header</h4>
+					<p>A bunch of text</p>
+				</div>
+				<div class="modal-footer">
+					<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+				</div>
+			</div>
         </div>		
 	</main>
 </div>

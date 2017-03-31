@@ -23,7 +23,7 @@ app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeP
 	init();
 	
 	$scope.visualizarUsuarios = function(){
-		alert('visualizar usuarios');
+		
 	}
 	
 	$scope.removerPromocao = function(id,n){
