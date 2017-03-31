@@ -9,6 +9,9 @@ $(document).ready(function() {
     $(".button-collapse").sideNav();
     $('.button-collapse').sideNav('hide');
     //$("input#titulo, input#tag, textarea#conteudo").characterCounter();	
+	
+	$('.tooltipped').tooltip({delay: 50});
+	
 });
 </script>
 
@@ -27,6 +30,11 @@ img {
 	width: 100%;
 }
 
+div.rodape {
+	padding-top: 5cm;
+}
+
+
 </style>
 
 <div class="footer-flex">
@@ -43,7 +51,7 @@ img {
 					  <div class="background">
 						<img src="">
 					  </div>
-					  <!--<a href="#!user"><img class="circle" src="resources/images/nibbles-2.png"></a>-->
+					  <!--<a href="#!user"><img class="circle" src="resources/images/logo.png"></a>-->
 					  <a href="#!user"><img class="circle" src=""></a>
 					  <a href="#!name"><span class="white-text name">John Doe</span></a>
 					  <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
@@ -105,21 +113,48 @@ img {
                     <div class="input-field">
                         <input id="pesquisa" ng-model="pesquisa" placeholder="ID, Nome, Descrição, Valor" type="text" class="validate">
                         <label for="pesquisa">Pesquisar</label>                        
-                        <p>Total de <b>{{totalEmailsCadastrados}}</b> emails cadastrados</p>
+                        <p>Total de <b>{{qtdProdutoPromo}}</b> produtos em promoção</p>
                     </div>
                 </div>
 			</div>
 				
 			<div class="row">
-				<div class="col s12 m4 l4" ng-repeat="promo in promocoes">
-					<div class="card small">
-						<div class="card-image">
-							<img src="resources/images/{{promo.imagemname}}">
-							<span class="card-title">{{promo.nome}}</span>																					
+				<div class="col s12 m4 l4" ng-repeat="promo in promocoes | filter: {'promocao':'s'}">
+					<div class="card medium">
+						
+						<div class="card-image waves-effect waves-block waves-light">
+							<img class="activator" src="resources/images/logo.png">
 						</div>
+						
 						<div class="card-content">
-							<p>{{promo.descricao}}</p>
-							<b>R$ {{promo.valor}}</b>
+							<span class="card-title activator grey-text text-darken-4">
+								<b>{{promo.nome}}</b>
+								<i class="material-icons right">more_vert</i>
+							</span>
+							<p>R$ {{promo.valor}}</p>
+						</div>
+						
+						<div class="card-reveal">
+							<span class="card-title grey-text text-darken-4">
+								<b>{{promo.nome}}</b>
+								<i class="material-icons right">close</i>
+							</span>
+							<p>{{promo.descricao}}</p>							
+							
+							<div class="row rodape">
+								<div class="col s12 m6 l6">
+									<a ng-click="removerPromocao()" class="waves-effect waves-light btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remover do sorteio">									
+										<!--<i class="material-icons">card_giftcard</i>-->
+										<i class="material-icons">remove_circle_outline</i>
+									</a>
+								</div>
+								<div class="col s12 m6 l6">									
+									<a ng-click="visualizarUsuarios()" class="waves-effect waves-light btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Visualizar Usuários">									
+										<i class="material-icons">supervisor_account</i>
+									</a>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>			  

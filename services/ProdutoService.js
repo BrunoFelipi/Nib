@@ -7,6 +7,13 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
                 url: 'ws/produto/getAll.php'
             });
         },
+		
+		getQtdProdutoPromo: function(){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getQtdProdutoPromo.php'
+            });
+        },
 	
 		getPromocaoAtiva: function(){
             return $http({
