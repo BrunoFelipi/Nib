@@ -15,6 +15,20 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 	
+		getQtdProdutoCardapioAtivo: function(){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getQtdProdutoCardapioAtivo.php'
+            });
+        },
+	
+		getQtdProdutoCardapioInativo: function(){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getQtdProdutoCardapioInativo.php'
+            });
+        },
+	
 		alterarPromoProduto: function(id, promo){
             return $http({
                 method: 'post',

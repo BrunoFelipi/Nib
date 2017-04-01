@@ -26,7 +26,7 @@ app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeP
 		
 	}
 	
-	$scope.removerPromocao = function(id,n){
+	$scope.removerSorteio = function(id,n){
 		
 		var promise = ProdutoService.alterarPromoProduto(id,'n');
 		promise.then(function(response){
