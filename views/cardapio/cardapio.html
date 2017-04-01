@@ -66,7 +66,7 @@ img {
 				<div class="col s12 m4 l4" ng-repeat="p in produtos | filter: pesquisa">
 					<div class="card medium">						
 						<div class="card-image waves-effect waves-block waves-light">
-							<img class="activator" src="resources/images/{{promo.imagemname}}">
+							<img class="activator" src="resources/images/{{p.imagemname}}">
 						</div>
 						
 						<div class="card-content">
@@ -82,12 +82,13 @@ img {
 								<i class="material-icons">remove_circle_outline</i>
 							</a>
 							
-							<a ng-if="p.promocao == 'n'" ng-click="adicionarSorteio(p.id)" class="left waves-effect waves-light btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="Adicionar ao sorteio">									
+							<a ng-if="p.promocao == 'n'" ng-click="adicionarSorteio(p.id)" class="left waves-effect waves-light btn tooltipped cyan accent-4" data-position="bottom" data-delay="50" data-tooltip="Adicionar ao sorteio">									
 								<!--<i class="material-icons">card_giftcard</i>-->
 								<i class="material-icons">add_circle_outline</i>
 							</a>
 							
-							<a class="right waves-effect waves-green btn-flat">Atr</a>
+							<a ng-if="p.ativo == 'n'" class="right waves-effect waves-green btn-flat">ATI</a>
+							<a ng-if="p.ativo == 's'" class="right waves-effect waves-red btn-flat">DES</a>
 						</div>
 						
 						<div class="card-reveal">

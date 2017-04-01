@@ -31,16 +31,16 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 	
 	$scope.removerSorteio = function(idProduto){
 		
-		var promise = ProdutoService.alterarPromoProduto(id,'n');
+		var promise = ProdutoService.alterarPromoProduto(idProduto,'n');
 		promise.then(function(response){
 		
 			if(response.data === 'true'){
 				init();
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Produto removido do sorteio com sucesso',2000);
+				Materialize.toast('Produto removido do sorteio',2000);
 			} else {
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Erro alterar produto',2000);
+				Materialize.toast('Erro ao alterar produto',2000);
 			}
 			
 		}, function(error){
@@ -51,16 +51,16 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 	
 	$scope.adicionarSorteio = function(idProduto){
 		
-		var promise = ProdutoService.alterarPromoProduto(id,'s');
+		var promise = ProdutoService.alterarPromoProduto(idProduto,'s');
 		promise.then(function(response){
 		
 			if(response.data === 'true'){
 				init();
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Produto inserido no sorteio com sucesso',2000);
+				Materialize.toast('Produto inserido no sorteio',2000);
 			} else {
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Erro alterar produto',2000);
+				Materialize.toast('Erro ao alterar produto',2000);
 			}
 			
 		}, function(error){
