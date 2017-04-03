@@ -14,6 +14,14 @@ app.config(function($routeProvider){
         templateUrl: 'views/cardapio/cardapio.html',
 		controller: 'cardapioCtrl'
     })
+	.when('/cardapio/add', {
+        templateUrl: 'views/cardapio/addProduto.html',
+		controller: 'addProdutoCtrl'
+    })
+	.when('/cardapio/edit/:id', {
+        templateUrl: 'views/cardapio/editProduto.html',
+		controller: 'editProdutoCtrl'
+    })
 	//PROMOÇÕES
     .when('/promocoes', {
         templateUrl: 'views/promocoes/promocoes.html',

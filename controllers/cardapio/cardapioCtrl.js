@@ -69,4 +69,51 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 		
 	}
 	
+	$scope.ativarProduto = function(idProduto){
+		
+		var promise = ProdutoService.ativaInativaProduto(idProduto,'s');
+		promise.then(function(response){
+			if(response.data === 'true'){
+				init();
+				$('.tooltipped').tooltip('remove');
+				Materialize.toast('Produto ativado',2000);
+			} else {
+				$('.tooltipped').tooltip('remove');
+				Materialize.toast('Erro ao alterar produto',2000);
+			}
+			
+		}, function(error){
+			Materialize.toast('Erro de conexão com o servidor',2000);
+		});	
+		
+	}
+	
+	$scope.desativarProduto = function(idProduto){
+		
+		var promise = ProdutoService.ativaInativaProduto(idProduto,'n');
+		promise.then(function(response){
+		
+			if(response.data === 'true'){
+				init();
+				$('.tooltipped').tooltip('remove');
+				Materialize.toast('Produto desativado',2000);
+			} else {
+				$('.tooltipped').tooltip('remove');
+				Materialize.toast('Erro ao alterar produto',2000);
+			}
+			
+		}, function(error){
+			Materialize.toast('Erro de conexão com o servidor',2000);
+		});	
+		
+	}
+	
+	$scope.addProdutoView = function(){
+		
+		$('.tooltipped').tooltip('remove');
+		$location.path('inicio');
+		
+	}
+	
+	
 });

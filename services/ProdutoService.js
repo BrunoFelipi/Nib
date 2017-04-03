@@ -8,6 +8,14 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 		
+		getProduto: function(idProduto){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getProduto.php',
+				data: {idProduto:idProduto}
+            });
+        },
+		
 		getQtdProdutoPromo: function(){
             return $http({
                 method: 'post',
@@ -37,20 +45,14 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 	
-        validarSenha: function(email, senha){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/validarSenha.php',
-                params: {email: email, senha: senha}
-            });
-        },
-        cadastrarUsuario: function(nome, email, senha){
+        ativaInativaProduto: function(idProduto, ativa){
             return $http({
                 method: 'post',
-                url: 'ws/usuario/insert.php',
-                data: {nome: nome, email: email, senha: senha}
+                url: 'ws/produto/ativaInativaProduto.php',
+                data: {idProduto: idProduto, ativa: ativa}
             });
         },
+		
         select: function(email){
             return $http({
                 method: 'get',
