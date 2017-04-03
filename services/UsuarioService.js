@@ -8,6 +8,13 @@ app.factory('UsuarioService', function($http, $rootScope, $location){
             });
         },
 	
+		getQtdUsuarios: function(){
+            return $http({
+                method: 'get',
+                url: 'ws/usuario/getQtdUsuarios.php'
+            });
+        },
+	
         validarSenha: function(email, senha){
             return $http({
                 method: 'get',

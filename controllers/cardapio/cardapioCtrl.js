@@ -8,21 +8,21 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 		promise.then(function (response) {        
 			$scope.produtos = response.data;
 		}, function (error) {
-			Materialize.toast('Erro de conexão com o banco', 4000);
+			Materialize.toast('Erro de conexão com o servidor', 4000);
 		});
 
 		promise = ProdutoService.getQtdProdutoCardapioAtivo();
 		promise.then(function (response) {        
 			$scope.qtdProdutosAtivos = response.data[0].qtdProdutoAtivo;
 		}, function (error) {
-			Materialize.toast('Erro de conexão com o banco', 4000);
+			Materialize.toast('Erro de conexão com o servidor', 4000);
 		});
 		
 		promise = ProdutoService.getQtdProdutoCardapioInativo();
 		promise.then(function (response) {        
 			$scope.qtdProdutosInativos = response.data[0].qtdProdutoInativo;
 		}, function (error) {
-			Materialize.toast('Erro de conexão com o banco', 4000);
+			Materialize.toast('Erro de conexão com o servidor', 4000);
 		});
 		
 	}
@@ -44,7 +44,7 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 			}
 			
 		}, function(error){
-			Materialize.toast('Erro de conexão com o Servidor ao carregar as publicações',2000);
+			Materialize.toast('Erro de conexão com o servidor',2000);
 		});	
 		
 	}
@@ -64,7 +64,7 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 			}
 			
 		}, function(error){
-			Materialize.toast('Erro de conexão com o Servidor ao carregar as publicações',2000);
+			Materialize.toast('Erro de conexão com o servidor',2000);
 		});	
 		
 	}
