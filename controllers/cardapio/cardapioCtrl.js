@@ -111,7 +111,7 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 	$scope.addProdutoView = function(){
 		
 		$('.tooltipped').tooltip('remove');
-		$location.path('inicio');
+		$location.path('cardapio/add');
 		
 	}
 	

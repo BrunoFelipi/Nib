@@ -1,4 +1,4 @@
-app.controller('editProdutoCtrl', function ($scope, $rootScope, $route, $location, $filter, ProdutoService) {
+app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routeParams, $location, $filter, ProdutoService) {
 
 	$scope.produto = [];
 
