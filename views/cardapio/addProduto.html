@@ -82,15 +82,16 @@ img {
 					<br>
 					<div class="file-field input-field">
 						<div class="btn">
-							<span>File</span>
+							<span>Imagem</span>
 							<input type="file" multiple>
 						</div>
 						<div class="file-path-wrapper">
-							<input class="file-path validate" ng-model="arquivo" type="text" placeholder="Selecione a imagem do prato" required>
+							<input class="file-path validate" ng-model="arquivo" type="text" placeholder="Selecione uma imagem do prato" required>
 						</div>
 					</div>
 					<br>
 					<button class="waves-effect waves-light btn" type="submit">Cadastrar</button>
+					<button class="waves-effect waves-light btn" ng-click="backCardapioView()">Cancelar</button>
 				</form>
 			</div>
 		</div>

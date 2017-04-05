@@ -44,4 +44,11 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 		});
 	}	
 	
+	$scope.backCardapioView = function(){
+		
+		$location.path('cardapio');
+		
+	}
+	
+	
 });
