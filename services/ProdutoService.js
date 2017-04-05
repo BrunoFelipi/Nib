@@ -53,11 +53,11 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 		
-        select: function(email){
+        addProduto: function(nomePrato, descricao, valor, promocao, ativo, imagemname){
             return $http({
-                method: 'get',
-                url: 'ws/usuario/select.php',
-                params: {email: email}
+                method: 'post',
+                url: 'ws/produto/addProduto.php',
+                data: {nomePrato: nomePrato, descricao: descricao, valor: valor, promocao: promocao, ativo: ativo, imagemname: imagemname}
             });
         },
         selectToken: function(token){

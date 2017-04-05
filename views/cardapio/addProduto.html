@@ -44,37 +44,53 @@ img {
 	<!-- Main -->
 	<main>
 		<div class="container">
+			<br>
+			<h5 class="light">Novo Produto</h5>
+			<hr>
+		
 			<div class="row">
-				<form class="col s12 m12 l12" action="cadastrarProduto()" method="post">
+				<form class="col s12 m12 l12" ng-submit="cadastrarProduto()" method="post">
 					<div class="row">
 						<br>
 						<div class="input-field col s12 m12 l12">
-							<input id="nomePrato" type="text" class="validate" required>
+							<input id="nomePrato" ng-model="p.nomePrato" type="text" class="validate" required>
 							<label for="nomePrato">Nome do prato</label>
 						</div>
 						<div class="input-field col s12 m12 l12">
-							<textarea id="descricao" class="materialize-textarea" required></textarea>
+							<textarea id="descricao" ng-model="p.descricao" class="materialize-textarea" required></textarea>
 							<label for="descricao">Descrição</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="valor" type="number" class="validate" value="0.00" min="1" required>
+							<input id="valor" type="number" ng-model="p.valor" class="validate" value="0.00" min="1" required>
 							<label for="valor">Preço R$</label>
 						</div>
 					 </div>
 					<div class="row">
 						<div class="input-field col s12 m12 l12">
-							<input type="checkbox" id="checkAtivo"/>
+							<input type="checkbox" ng-model="p.checkAtivo" id="checkAtivo" checked="checked"/>
 							<label for="checkAtivo">Ativo</label>
 						</div>	
 					</div>
 					<div class="row">
 						<div class="input-field col s12 m12 l12">		
-							<input type="checkbox" id="checkSorteio"/>
+							<input type="checkbox" ng-model="p.checkSorteio" id="checkSorteio"/>
 							<label for="checkSorteio">Sorteio</label>
 						</div>
 					</div>
+					<br>
+					<div class="file-field input-field">
+						<div class="btn">
+							<span>File</span>
+							<input type="file" multiple>
+						</div>
+						<div class="file-path-wrapper">
+							<input class="file-path validate" ng-model="arquivo" type="text" placeholder="Selecione a imagem do prato" required>
+						</div>
+					</div>
+					<br>
+					<button class="waves-effect waves-light btn" type="submit">Cadastrar</button>
 				</form>
 			</div>
 		</div>

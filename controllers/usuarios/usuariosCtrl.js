@@ -13,7 +13,6 @@ app.controller('usuariosCtrl', function ($scope, $location, $rootScope, $route, 
 		var promise = UsuarioService.getQtdUsuarios();
 		promise.then(function(response){		
 			$scope.qtdUsuarios = response.data[0].qtdUsuarios;
-			console.log($scope.qtdUsuarios);
 		}, function(error){
 			Materialize.toast('Erro de conexão com o Servidor ao carregar as publicações',2000);
 		});	
