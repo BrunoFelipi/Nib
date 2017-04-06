@@ -60,47 +60,13 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
                 data: {nomePrato: nomePrato, descricao: descricao, valor: valor, promocao: promocao, ativo: ativo, imagemname: imagemname}
             });
         },
-        selectToken: function(token){
+		
+		copyFile: function(file){
             return $http({
-                method: 'get',
-                url: 'ws/usuario/selectToken.php',
-                params: {token: token}
+				method: 'post',
+                url: 'ws/produto/copyFile.php',
+                data: {file: file}
             });
-        },
-        logar: function(email, senha){
-          return $http({
-              method: 'get',
-              url: 'ws/usuario/logar.php',
-              params: {email: email, senha: senha}
-          });
-        },
-        existEmail: function(email){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/existEmail.php',
-                params: {email: email}
-            });
-        },
-        alterarSenha: function(email, senha){
-            return $http({
-                method: 'post',
-                url: 'ws/usuario/alterarSenha.php',
-                data: {email: email, senha: senha}
-            });
-        },
-		enviarEmailEsqueceuSenha: function(email, token){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/enviarEmailEsqueceuSenha.php',
-                params: {email: email, token: token}
-            });
-        },
-        enviarEmailAlterouSenha: function(email){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/enviarEmailAlterouSenha.php',
-                params: {email: email}
-            });
-        },
+        }
     }
 });

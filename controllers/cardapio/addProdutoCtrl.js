@@ -17,6 +17,8 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 	
 	$scope.cadastrarProduto = function(){
 	
+		alert($scope.arquivo);
+	/*
 		if($scope.p.checkAtivo === undefined){
 			$scope.p.checkAtivo = 'n';
 		} else {
@@ -42,6 +44,15 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 		}, function (error) {
 			Materialize.toast('Erro de conexão com o servidor', 4000);
 		});
+		*/
+		
+		var promise = ProdutoService.copyFile($scope.arquivo);
+        promise.then(function(response) {
+            console.log(response.data);
+        }, function (error) {
+            Materialize.toast('Erro de conexão com o servidor<br>Tente novamente mais tarde',4000);            
+        });
+		
 	}	
 	
 	$scope.backCardapioView = function(){
