@@ -36,4 +36,9 @@ app.config(function($routeProvider){
         templateUrl: 'views/usuarios/usuarios.html',
 		controller: 'usuariosCtrl'
     })
+	//CONTA	
+    .when('/conta', {
+        templateUrl: 'views/conta/conta.html',
+		controller: 'contaCtrl'
+    })
 });

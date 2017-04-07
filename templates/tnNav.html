@@ -4,17 +4,16 @@
 		<ul id="slide-out" class="side-nav fixed">
 		<li>
 			<div class="userView">			  
-				<!--<div class="background cyan accent-3">-->
-				<div class="background">
+				<div class="background cyan accent-3">
+				<!--<div class="background">-->
 					<img src="">
 				</div>
-				<a href="#!user"><img class="circle" src="resources/images/errado.png"></a>
-				<!--<a href="#!user"><img class="circle" src="resources/images/logoORIG.png"></a>-->
+				<!--<a href="#!user"><img class="circle" src="resources/images/errado.png"></a>-->
+				<a href="#!user"><img class="circle" src="resources/images/logoORIG.png"></a>
 			  
-				<a href=""><span class="light white-text name">TecNews</span></a>
-				<!--<a href="#!name"><span class="white-text name">John Doe</span></a>-->
-			  
-				<a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+				<!--<a href=""><span class="light white-text name">TecNews</span></a>-->
+				<a href=""><span class="white-text name">Usuário logado</span></a>			  
+				<a href=""><span class="white-text email">usuario@email.com.br</span></a>
 			</div>
 		</li>
 		<li ng-class="{'active': selected=='inicio'}">
@@ -41,7 +40,12 @@
 				Usuários
 			</a>
 		</li>
-		
+		<li ng-class="{'active': selected=='conta'}">
+			<a class="waves-effect" href="#/conta">
+				<i class="material-icons">settings</i>
+				Conta
+			</a>
+		</li>		
 		<li>
 			<div class="divider"></div>
 		</li>
@@ -55,16 +59,16 @@
 		
 	  </ul>
 	</div>
-	<div class="nav-wrapper teal">
-	<!--<div class="nav-wrapper">-->
+	<!--<div class="nav-wrapper teal">-->
+	<div class="nav-wrapper">
 		
-		<a href="" class="brand-logo teal light center">TecNews Admin</a>
+		<!--<a href="" class="brand-logo teal light center">TecNews Admin</a>-->
 		
-		<!--
 		<a ng-show="selected=='inicio'" href="#/inicio" class="brand-logo light center">Início</a>
 		<a ng-show="selected=='promocoes'" href="#/promocoes" class="brand-logo light center">Promoções</a>
 		<a ng-show="selected=='cardapio'" href="#/cardapio" class="brand-logo light center">Cardápio</a>
 		<a ng-show="selected=='usuarios'" href="#/usuarios" class="brand-logo light center">Usuários</a>
-		-->
+		<a ng-show="selected=='conta'" href="#/conta" class="brand-logo light center">Conta</a>
+		
 	</div>
 </nav>

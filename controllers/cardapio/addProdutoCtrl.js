@@ -1,5 +1,5 @@
 app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routeParams, $location, $filter, ProdutoService) {
-
+	
 	$scope.produto = [];
 
 	var init = function(){
@@ -17,8 +17,6 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 	
 	$scope.cadastrarProduto = function(){
 	
-		alert($scope.arquivo);
-	/*
 		if($scope.p.checkAtivo === undefined){
 			$scope.p.checkAtivo = 'n';
 		} else {
@@ -31,12 +29,14 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 			$scope.p.checkSorteio = 's';
 		}
 		
-		var promise = ProdutoService.addProduto($scope.p.nomePrato, $scope.p.descricao, $scope.p.valor, $scope.p.checkAtivo, $scope.p.checkSorteio, $scope.arquivo);
+		var promise = ProdutoService.addProduto($scope.p.nomePrato, $scope.p.descricao, $scope.p.valor, $scope.p.checkSorteio, $scope.p.checkAtivo, $scope.arquivo);
 		promise.then(function (response) {        
+
+			console.log(response.data);
 			
 			if(response.data === 'true'){
 				Materialize.toast('Produto cadastrado', 4000);
-				$location.path('inicio');
+				$location.path('cardapio');
 			} else {
 				Materialize.toast('Erro de conexão com o servidor', 4000);				
 			}
@@ -44,22 +44,20 @@ app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routePar
 		}, function (error) {
 			Materialize.toast('Erro de conexão com o servidor', 4000);
 		});
-		*/
-		
+	
+		/*
 		var promise = ProdutoService.copyFile($scope.arquivo);
         promise.then(function(response) {
             console.log(response.data);
         }, function (error) {
             Materialize.toast('Erro de conexão com o servidor<br>Tente novamente mais tarde',4000);            
         });
+		*/
 		
 	}	
 	
 	$scope.backCardapioView = function(){
-		
-		$location.path('cardapio');
-		
+		$location.path('cardapio');	
 	}
-	
 	
 });
