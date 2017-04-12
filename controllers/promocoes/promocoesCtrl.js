@@ -7,6 +7,7 @@ app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeP
 		var promise = ProdutoService.getAll();
 		promise.then(function(response){		
 			$scope.produtosPromocao = response.data;
+			console.log($scope.produtosPromocao);
 		}, function(error){
 			Materialize.toast('Erro de conexão com o servidor',2000);
 		});

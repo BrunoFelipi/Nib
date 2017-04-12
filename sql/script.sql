@@ -9,19 +9,21 @@ CREATE TABLE  produto (
   imagemname varchar(200)
 );
 
-insert into produto values (0,"Pratasso","prato teste", 20.00,"s","n","prato1.png");
+insert into produto values (0,"Pratasso","prato teste", 20.00,"s","n","prato1.png","descricaoPromocao");
 
 CREATE TABLE  usuario (
   id int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nomeUsuario varchar(200),
+  senha varchar(100),
   email varchar(200),
   numeroCelular varchar(100)  
 );
 
-insert into usuario values (0,"Bruno Souza","bruno.souza@senior.com.br", "47 99618-4248");
+insert into usuario values (0,"Bruno Souza","senha","bruno.souza@senior.com.br", "47 99618-4248");
 
 CREATE TABLE  sorteio (
   id int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   idUsuario int(8),
-  idProduto int(8) 
+  idProduto int(8),
+  dataSorteio datetime	
 );

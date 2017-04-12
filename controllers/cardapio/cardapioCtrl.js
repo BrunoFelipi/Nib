@@ -96,10 +96,10 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 			if(response.data === 'true'){
 				init();
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Produto desativado',2000);
+				Materialize.toast('Produto excluido',2000);
 			} else {
 				$('.tooltipped').tooltip('remove');
-				Materialize.toast('Erro ao alterar produto',2000);
+				Materialize.toast('Erro ao excluir produto',2000);
 			}
 			
 		}, function(error){

@@ -10,7 +10,7 @@
     $imagemname = $data['imagemname'];
 	$descricaoPromocao = '';
     
-    $sql = "INSERT INTO produto VALUES (0,'$nomePrato','$descricao','$valor','$promocao','$ativo','$imagemname','$descricaoPromocao')";
+    $sql = "INSERT INTO produto VALUES (0,'$nomePrato','$descricao','$descricaoPromocao','$valor','$promocao','$ativo','$imagemname')";
     $rs = mysqli_query($conexao, $sql);
 
     if($rs){
