@@ -15,6 +15,14 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
 				data: {idProduto:idProduto}
             });
         },
+
+        getProdutoByNome: function(nomeProduto){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/getProdutoByNome.php',
+				data: {nomeProduto:nomeProduto}
+            });
+        },
 		
 		getQtdProdutoPromo: function(){
             return $http({
@@ -45,11 +53,11 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 	
-        ativaInativaProduto: function(idProduto, ativa){
+        desativaProduto: function(idProduto){
             return $http({
                 method: 'post',
-                url: 'ws/produto/ativaInativaProduto.php',
-                data: {idProduto: idProduto, ativa: ativa}
+                url: 'ws/produto/desativaProduto.php',
+                data: {idProduto: idProduto}
             });
         },
 		

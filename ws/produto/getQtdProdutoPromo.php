@@ -1,7 +1,7 @@
 <?php
     include '../conexao.php';
     
-    $sql = "SELECT COUNT(*) AS qtdProdutoPromo FROM produto where promocao='s'";
+    $sql = "SELECT COUNT(*) AS qtdProdutoPromo FROM produto where promocao='s' AND ativo='s'";
     $rs = mysqli_query($conexao, $sql);
 
     $json = array();

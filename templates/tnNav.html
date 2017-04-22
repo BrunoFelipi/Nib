@@ -5,35 +5,28 @@
 		<li>
 			<div class="userView">			  
 				<div class="background cyan accent-3">
-				<!--<div class="background">-->
 					<img src="">
 				</div>
-				<!--<a href="#!user"><img class="circle" src="resources/images/errado.png"></a>-->
-				<a href="#!user"><img class="circle" src="resources/images/logoORIG.png"></a>
+
+				<a href="#/conta"><img class="circle" src="resources/images/logoORIG.png"></a>
 			  
-				<!--<a href=""><span class="light white-text name">TecNews</span></a>-->
 				<a href=""><span class="white-text name">Usuário logado</span></a>			  
 				<a href=""><span class="white-text email">usuario@email.com.br</span></a>
 			</div>
 		</li>
-		<li ng-class="{'active': selected=='inicio'}">
-			<a class="waves-effect" href="#/inicio">
-				<i class="material-icons">home</i>
-				Início
-			</a>
-		</li>
-		<li ng-class="{'active': selected=='promocoes'}">
-			<a class="waves-effect" href="#/promocoes">
-				<i class="material-icons">loyalty</i>
-				Promoções
-			</a>
-		</li>				
+		
 		<li ng-class="{'active': selected=='cardapio'}">
 			<a class="waves-effect" href="#/cardapio">
 				<i class="material-icons">restaurant_menu</i>
 				Cardápio
 			</a>
 		</li>
+		<li ng-class="{'active': selected=='sorteio'}">
+			<a class="waves-effect" href="#/sorteio">
+				<i class="material-icons">loyalty</i>
+				Sorteio
+			</a>
+		</li>		
 		<li ng-class="{'active': selected=='usuarios'}">
 			<a class="waves-effect" href="#/usuarios">
 				<i class="material-icons">people</i>
@@ -65,10 +58,11 @@
 		<!--<a href="" class="brand-logo teal light center">TecNews Admin</a>-->
 		
 		<a ng-show="selected=='inicio'" href="#/inicio" class="brand-logo light center">Início</a>
-		<a ng-show="selected=='promocoes'" href="#/promocoes" class="brand-logo light center">Promoções</a>
+		<a ng-show="selected=='sorteio'" href="#/sorteio" class="brand-logo light center">Sorteio</a>
 		<a ng-show="selected=='cardapio'" href="#/cardapio" class="brand-logo light center">Cardápio</a>
 		<a ng-show="selected=='usuarios'" href="#/usuarios" class="brand-logo light center">Usuários</a>
 		<a ng-show="selected=='conta'" href="#/conta" class="brand-logo light center">Conta</a>
+		<a ng-show="selected=='sortear'" href="#/realizarsorteio" class="brand-logo light center">Sortear</a>
 		
 	</div>
 </nav>

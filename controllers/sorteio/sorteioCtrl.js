@@ -1,4 +1,4 @@
-app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService) {
+app.controller('sorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService) {
 
 	$scope.produtosPromocao = [];
 	
@@ -7,7 +7,6 @@ app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeP
 		var promise = ProdutoService.getAll();
 		promise.then(function(response){		
 			$scope.produtosPromocao = response.data;
-			console.log($scope.produtosPromocao);
 		}, function(error){
 			Materialize.toast('Erro de conexão com o servidor',2000);
 		});
@@ -32,13 +31,16 @@ app.controller('promocoesCtrl', function ($scope, $rootScope, $location, $routeP
 		var promise = SorteioService.getUsersProduto(idProduto);
 		promise.then(function(response){		
 			$scope.usuariosProduto = response.data;
-			console.log($scope.usuariosProduto);
 		}, function(error){
 			Materialize.toast('Erro de conexão com o servidor',2000);
 		});
 		
 	}
 	
+	$scope.openViewRealizarSorteio = function(){
+		$location.path("realizarsorteio");
+	}
+
 	$scope.removerSorteio = function(id,n){
 		
 		var promise = ProdutoService.alterarPromoProduto(id,'n');

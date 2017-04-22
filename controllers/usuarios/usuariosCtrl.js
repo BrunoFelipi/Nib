@@ -5,7 +5,6 @@ app.controller('usuariosCtrl', function ($scope, $location, $rootScope, $route, 
 	var init = function(){	
 		var promise = UsuarioService.getAll();
 		promise.then(function(response){	
-			console.log(response.data);
 			$scope.usuarios = response.data;
 		}, function(error){
 			Materialize.toast('Erro de conexão com o Servidor ao carregar as publicações',2000);

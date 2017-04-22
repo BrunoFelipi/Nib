@@ -115,5 +115,11 @@ app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, 
 		
 	}
 	
+	$scope.moreInfoProduto = function(idProduto){
+		
+		$('.tooltipped').tooltip('remove');
+		$location.path('cardapio/detalhes/' + idProduto);
+		
+	}
 	
 });

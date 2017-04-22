@@ -32,7 +32,7 @@ img {
 <div class="footer-flex">
 	<!-- Header -->
 	<header>
-		<tn-Nav selected="promocoes"></tn-Nav>
+		<tn-Nav selected="sorteio"></tn-Nav>
 	</header>
 	
 	<!-- Main -->
@@ -50,14 +50,15 @@ img {
                 </div>
 				
 				<div class="col s12 m12 l6">
-					<br>
-					<br>
 					Total de <b>{{qtdProdutoPromo}}</b> produtos para sortear
+
+					<a ng-click="openViewRealizarSorteio()" class="left waves-effect waves-light btn">Realizar Sorteio</a>
+
 				</div>
 			</div>
 				
 			<div class="row">
-				<div class="col s12 m6 l4" ng-repeat="produtoPromo in produtosPromocao | filter: {'promocao':'s'}">
+				<div class="col s12 m6 l4" ng-repeat="produtoPromo in produtosPromocao | filter: {promocao:'s'} | filter: {ativo:'s'}">
 					<div class="card medium">
 						
 						<div class="card-image waves-effect waves-block waves-light">
@@ -100,9 +101,7 @@ img {
 					
 					<b>Produto:</b> {{nomeProdutoSelecionado}}
 					<br>
-					<b>Descrição produto:</b> {{descricaoProdutoSelecionado}}
-					<br>
-					<b>Descrição promoção:</b> {{descricaoPromocaoSelecionado}}				
+					<b>Descrição produto:</b> {{descricaoProdutoSelecionado}}		
 					
 					<h5>Usuários Sorteados</h5>
 					
@@ -121,6 +120,7 @@ img {
 								<td>{{usuP.nomeUsuario}}</td>
 								<td>{{usuP.email}}</td>
 								<td>{{usuP.numeroCelular}}</td>
+								<td>{{usuP.dataSorteio}}</td>
 							</tr>
 						</tbody>
 					</table>					

@@ -2,10 +2,10 @@
     include '../conexao.php';
     $data = json_decode(file_get_contents('php://input'), true);
 
+    $idUsuario = $data['idUsuario'];
     $idProduto = $data['idProduto'];
-    $ativa = $data['ativa'];
     
-    $sql = "UPDATE produto SET ativo='$ativa' WHERE id=$idProduto";
+    $sql = "INSERT INTO sorteio VALUES (0,'$idUsuario','$idProduto',NOW())";
     $rs = mysqli_query($conexao, $sql);
 
     if($rs){

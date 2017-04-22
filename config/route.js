@@ -2,12 +2,8 @@ app.config(function($routeProvider){
     $routeProvider
     //INICIO
 	.when('/', {
-        templateUrl: 'views/inicio/inicio.html',
-		controller: 'inicioCtrl'
-    })	
-    .when('/inicio', {
-        templateUrl: 'views/inicio/inicio.html',
-		controller: 'inicioCtrl'
+        templateUrl: 'views/cardapio/cardapio.html',
+		controller: 'cardapioCtrl'
     })
 	//CARDÁPIO
     .when('/cardapio', {
@@ -22,14 +18,18 @@ app.config(function($routeProvider){
         templateUrl: 'views/cardapio/editProduto.html',
 		controller: 'editProdutoCtrl'
     })
-	//PROMOÇÕES
-    .when('/promocoes', {
-        templateUrl: 'views/promocoes/promocoes.html',
-		controller: 'promocoesCtrl'
+    .when('/cardapio/detalhes/:id', {
+        templateUrl: 'views/cardapio/detalhesProduto.html',
+		controller: 'detalhesProdutoCtrl'
     })
-	.when('/promocoes/:id', {
-        templateUrl: 'views/promocoes/visualizarUsuariosProduto.html',
-		controller: 'promocoesCtrl'
+	//SORTEIO
+    .when('/sorteio', {
+        templateUrl: 'views/sorteio/sorteio.html',
+		controller: 'sorteioCtrl'
+    })
+    .when('/realizarsorteio', {
+        templateUrl: 'views/sorteio/realizarSorteio.html',
+		controller: 'realizarSorteioCtrl'
     })
 	//USUÁRIOS
     .when('/usuarios', {
