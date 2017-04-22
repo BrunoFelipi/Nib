@@ -39,10 +39,14 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 
 			var qtdUsuarios = $scope.usuarios.length;
 			var random = Math.floor(Math.random() * qtdUsuarios) + 1;
-			
+			var random2 = Math.floor(Math.random() * random) + 1;
+
+			console.log("Random: " + random);
+			console.log("Random2: " + random2);
+
 			for(var i=0; i < qtdUsuarios; i++){
 				
-				if($scope.usuarios[i].id == random){
+				if($scope.usuarios[i].id == random2){
 					$scope.usuarioSorteado = $scope.usuarios[i];
 					console.log("Usuário Sorteado: " + $scope.usuarioSorteado.nomeUsuario);				
 				}
