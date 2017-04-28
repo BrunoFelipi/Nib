@@ -1,4 +1,6 @@
-app.controller('sorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService) {
+app.controller('sorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService, SessaoService) {
+
+	SessaoService.validar();
 
 	$scope.produtosPromocao = [];
 	

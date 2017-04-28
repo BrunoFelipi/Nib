@@ -10,8 +10,8 @@
 
 				<a href="#/conta"><img class="circle" src="resources/images/logoORIG.png"></a>
 			  
-				<a href=""><span class="white-text name">Usuário logado</span></a>			  
-				<a href=""><span class="white-text email">usuario@email.com.br</span></a>
+				<a href=""><span class="white-text name">{{nomeUsuarioLogado}}</span></a>			  
+				<a href=""><span class="white-text email">{{emailUsuarioLogado}}</span></a>
 			</div>
 		</li>
 		
@@ -44,7 +44,7 @@
 		</li>
 		
 		<li>
-			<a class="waves-effect" href="#!">
+			<a class="waves-effect" href="" ng-click="sair()">
 				<i class="material-icons">exit_to_app</i>
 				Sair
 			</a>
@@ -52,17 +52,13 @@
 		
 	  </ul>
 	</div>
-	<!--<div class="nav-wrapper teal">-->
+
 	<div class="nav-wrapper">
-		
-		<!--<a href="" class="brand-logo teal light center">TecNews Admin</a>-->
-		
 		<a ng-show="selected=='inicio'" href="#/inicio" class="brand-logo light center">Início</a>
 		<a ng-show="selected=='sorteio'" href="#/sorteio" class="brand-logo light center">Sorteio</a>
 		<a ng-show="selected=='cardapio'" href="#/cardapio" class="brand-logo light center">Cardápio</a>
 		<a ng-show="selected=='usuarios'" href="#/usuarios" class="brand-logo light center">Usuários</a>
 		<a ng-show="selected=='conta'" href="#/conta" class="brand-logo light center">Conta</a>
 		<a ng-show="selected=='sortear'" href="#/realizarsorteio" class="brand-logo light center">Sortear</a>
-		
 	</div>
 </nav>

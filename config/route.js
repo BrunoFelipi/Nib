@@ -1,9 +1,13 @@
 app.config(function($routeProvider){
     $routeProvider
-    //INICIO
+    //LOGIN
 	.when('/', {
-        templateUrl: 'views/cardapio/cardapio.html',
-		controller: 'cardapioCtrl'
+        templateUrl: 'views/login/login.html',
+		controller: 'loginCtrl'
+    })
+    .when('/login', {
+        templateUrl: 'views/login/login.html',
+		controller: 'loginCtrl'
     })
 	//CARDÁPIO
     .when('/cardapio', {

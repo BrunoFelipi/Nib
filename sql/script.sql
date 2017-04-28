@@ -16,6 +16,7 @@ CREATE TABLE  usuario (
   nomeUsuario varchar(200),
   senha varchar(100),
   email varchar(200),
+  token varchar(32),
   numeroCelular varchar(100)  
 );
 
@@ -27,3 +28,14 @@ CREATE TABLE  sorteio (
   idProduto int(8),
   dataSorteio datetime	
 );
+
+create table administrador (
+    id int(8) primary key auto_increment,
+    nome varchar(100),
+    email varchar(50),
+    senha varchar(50),
+    token varchar(32),
+    ativo int(1)
+);
+
+insert into administrador values (0,'Bruno Felipi de Souza','brunofelipi13@gmail.com','698dc19d489c4e4db73e28a713eab07b','a1fb9cd1341878f0e32ba74a6a9cce76',1);

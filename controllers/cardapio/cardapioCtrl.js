@@ -1,4 +1,6 @@
-app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, $filter, ProdutoService) {
+app.controller('cardapioCtrl', function ($scope, $rootScope, $route, $location, $filter, ProdutoService, SessaoService) {
+
+	SessaoService.validar();
 
 	$scope.produtos = [];
 

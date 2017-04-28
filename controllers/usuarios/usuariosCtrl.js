@@ -1,4 +1,6 @@
-app.controller('usuariosCtrl', function ($scope, $location, $rootScope, $route, UsuarioService) {
+app.controller('usuariosCtrl', function ($scope, $location, $rootScope, $route, UsuarioService, SessaoService) {
+
+	SessaoService.validar();
 
 	$scope.usuarios = [];
 

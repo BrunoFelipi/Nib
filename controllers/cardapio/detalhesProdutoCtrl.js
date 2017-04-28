@@ -1,4 +1,6 @@
-app.controller('detalhesProdutoCtrl', function ($scope, $rootScope, $route, $location, $filter, ProdutoService, $routeParams) {
+app.controller('detalhesProdutoCtrl', function ($scope, $rootScope, $route, $location, $filter, ProdutoService, $routeParams, SessaoService) {
+
+	SessaoService.validar();
 
 	$scope.produto = [];
 

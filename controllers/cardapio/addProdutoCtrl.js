@@ -1,5 +1,7 @@
-app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routeParams, $location, $filter, ProdutoService) {
+app.controller('addProdutoCtrl', function ($scope, $rootScope, $route, $routeParams, $location, $filter, ProdutoService, SessaoService) {
 	
+	SessaoService.validar();
+
 	$scope.produto = [];
 
 	var init = function(){

@@ -1,5 +1,7 @@
 app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService, UsuarioService) {
 
+	SessaoService.validar();
+
 	$scope.produtosPromocao = [];
 	$scope.usuarios = [];
 	$scope.usuarioSorteado = null;
