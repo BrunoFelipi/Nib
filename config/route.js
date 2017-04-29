@@ -9,6 +9,10 @@ app.config(function($routeProvider){
         templateUrl: 'views/login/login.html',
 		controller: 'loginCtrl'
     })
+    .when('/esqueceuSenha', {
+        templateUrl: 'views/login/esqueceuSenha.html',
+		controller: 'loginCtrl'
+    })
 	//CARDÁPIO
     .when('/cardapio', {
         templateUrl: 'views/cardapio/cardapio.html',
@@ -40,9 +44,17 @@ app.config(function($routeProvider){
         templateUrl: 'views/usuarios/usuarios.html',
 		controller: 'usuariosCtrl'
     })
-	//CONTA	
-    .when('/conta', {
-        templateUrl: 'views/conta/conta.html',
-		controller: 'contaCtrl'
+	//CONFIGURAÇÃO
+    .when('/configuracao', {
+        templateUrl: 'views/configuracao/configuracao.html',
+		controller: 'configuracaoCtrl'
+    })
+    .when('/alterarSenha', {
+        templateUrl: 'views/configuracao/alterarSenha.html',
+		controller: 'configuracaoCtrl'
+    })
+    .when('/inserirUsuario', {
+        templateUrl: 'views/configuracao/inserirUsuario.html',
+		controller: 'configuracaoCtrl'
     })
 });

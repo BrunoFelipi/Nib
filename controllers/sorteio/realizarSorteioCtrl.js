@@ -1,4 +1,4 @@
-app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService, UsuarioService) {
+app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $routeParams, $filter, ProdutoService, SorteioService, UsuarioService, SessaoService) {
 
 	SessaoService.validar();
 

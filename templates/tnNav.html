@@ -8,7 +8,7 @@
 					<img src="">
 				</div>
 
-				<a href="#/conta"><img class="circle" src="resources/images/logoORIG.png"></a>
+				<a href="#/configuracao"><img class="circle" src="resources/images/logoORIG.png"></a>
 			  
 				<a href=""><span class="white-text name">{{nomeUsuarioLogado}}</span></a>			  
 				<a href=""><span class="white-text email">{{emailUsuarioLogado}}</span></a>
@@ -33,10 +33,10 @@
 				Usuários
 			</a>
 		</li>
-		<li ng-class="{'active': selected=='conta'}">
-			<a class="waves-effect" href="#/conta">
+		<li ng-class="{'active': selected=='configuracao'}">
+			<a class="waves-effect" href="#/configuracao">
 				<i class="material-icons">settings</i>
-				Conta
+				Configuração
 			</a>
 		</li>		
 		<li>
@@ -58,7 +58,9 @@
 		<a ng-show="selected=='sorteio'" href="#/sorteio" class="brand-logo light center">Sorteio</a>
 		<a ng-show="selected=='cardapio'" href="#/cardapio" class="brand-logo light center">Cardápio</a>
 		<a ng-show="selected=='usuarios'" href="#/usuarios" class="brand-logo light center">Usuários</a>
-		<a ng-show="selected=='conta'" href="#/conta" class="brand-logo light center">Conta</a>
+		<a ng-show="selected=='configuracao'" href="#/configuracao" class="brand-logo light center">Configuração</a>
+		<a ng-show="selected=='inserirUsuario'" href="#/inserirUsuario" class="brand-logo light center">Novo Usuário</a>
+		<a ng-show="selected=='alterarSenha'" href="#/alterarSenha" class="brand-logo light center">Alterar Senha</a>
 		<a ng-show="selected=='sortear'" href="#/realizarsorteio" class="brand-logo light center">Sortear</a>
 	</div>
 </nav>

@@ -9,6 +9,14 @@ app.controller('loginCtrl', function ($scope, $rootScope, $location, $routeParam
                 SessaoService.iniciar($scope.email);                
                 localStorage.setItem('emailAdmin', $scope.email);
                 $location.path("cardapio");
+
+                var promise = LoginService.getAdminLogado();
+                promise.then(function(response){
+                    localStorage.setItem('nomeAdmin', response.data[0].nome);
+                }, function(error){
+                    Materialize.toast('Erro de conexão com o Servidor',2000);
+                });
+
             } else {
                 Materialize.toast('Usuário/Senha inválidos', 4000);
             }
