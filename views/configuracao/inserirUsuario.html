@@ -2,7 +2,7 @@
 $(document).ready(function() {
     
 	$('select').material_select();
-    //$('#conteudo').focus();
+    $('#nome').focus();
     //$('#tag').focus();
     //$('#titulo').focus();
     $(".button-collapse").sideNav();
@@ -41,9 +41,38 @@ img {
         <div class="container">
             <div class="row">
                 <br>
-                <div class="col s12 m12 l12">
-                
-                </div>
+                <form ng-submit="inserirUsuario()">
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="nome" type="text" class="validate" ng-model="nome" required>
+                            <label for="nome">Nome</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="email" type="email" class="validate" ng-model="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="senha" type="password" class="validate" ng-model="senha" required>
+                            <label for="senha">Senha</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="confirmarSenha" type="password" class="validate" ng-model="confirmarSenha" required>
+                            <label for="confirmarSenha">Confirmar Senha</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <a href="#/configuracao" class="waves-effect waves-light btn orange darken-4">Cancelar</a>
+                            <button type="submit" class="right waves-effect waves-light btn orange darken-4">Adicionar</button>                            
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 	</main>

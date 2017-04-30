@@ -15,11 +15,11 @@ app.factory('UsuarioService', function($http, $rootScope, $location){
             });
         },
 	
-        validarSenha: function(email, senha){
+        validarSenha: function(email, senhaAtual){
             return $http({
-                method: 'get',
+                method: 'post',
                 url: 'ws/usuario/validarSenha.php',
-                params: {email: email, senha: senha}
+                data: {email: email, senhaAtual: senhaAtual}
             });
         },
 		
@@ -30,54 +30,29 @@ app.factory('UsuarioService', function($http, $rootScope, $location){
                 data: {nome: nome, email: email, senha: senha}
             });
         },
-        select: function(email){
+
+        inserirAdministrador: function(nome, email, senha){
             return $http({
-                method: 'get',
-                url: 'ws/usuario/select.php',
-                params: {email: email}
+                method: 'post',
+                url: 'ws/usuario/inserirAdministrador.php',
+                data: {nome: nome, email: email, senha: senha}
             });
         },
-        selectToken: function(token){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/selectToken.php',
-                params: {token: token}
-            });
-        },
-        logar: function(email, senha){
-          return $http({
-              method: 'get',
-              url: 'ws/usuario/logar.php',
-              params: {email: email, senha: senha}
-          });
-        },
+
         existEmail: function(email){
             return $http({
-                method: 'get',
+                method: 'post',
                 url: 'ws/usuario/existEmail.php',
-                params: {email: email}
+                data: {email: email}
             });
         },
-        alterarSenha: function(email, senha){
+
+        alterarSenha: function(email, novaSenha){
             return $http({
                 method: 'post',
                 url: 'ws/usuario/alterarSenha.php',
-                data: {email: email, senha: senha}
+                data: {email: email, novaSenha: novaSenha}
             });
-        },
-		enviarEmailEsqueceuSenha: function(email, token){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/enviarEmailEsqueceuSenha.php',
-                params: {email: email, token: token}
-            });
-        },
-        enviarEmailAlterouSenha: function(email){
-            return $http({
-                method: 'get',
-                url: 'ws/usuario/enviarEmailAlterouSenha.php',
-                params: {email: email}
-            });
-        },
+        }
     }
 });

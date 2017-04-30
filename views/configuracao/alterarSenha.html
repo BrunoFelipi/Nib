@@ -13,38 +13,65 @@ $(document).ready(function() {
 </script>
 
 <style media="screen">
-header, main, footer {
-    padding-left: 300px;
-}
-@media only screen and (max-width : 992px) {
-    header, main, footer {
-        padding-left: 0;
+    header,
+    main,
+    footer {
+        padding-left: 300px;
     }
-}
-
-img {
-	height: 100%;
-	width: 100%;
-}
-
+    
+    @media only screen and (max-width: 992px) {
+        header,
+        main,
+        footer {
+            padding-left: 0;
+        }
+    }
+    
+    img {
+        height: 100%;
+        width: 100%;
+    }
 </style>
 
 <div class="footer-flex">
-	<!-- Header -->
-	<header>
-		<tn-Nav selected="alterarSenha"></tn-Nav>
-	</header>
-	
-	<!-- Main -->
-	<main>
+    <!-- Header -->
+    <header>
+        <tn-Nav selected="alterarSenha"></tn-Nav>
+    </header>
+
+    <!-- Main -->
+    <main>
         <br>
         <div class="container">
             <div class="row">
                 <br>
-                <div class="col s12 m12 l12">
-                    
-                </div>
+                <form ng-submit="alterarSenha()">
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="senhaAtual" type="password" class="validate" ng-model="senhaAtual" required>
+                            <label for="senhaAtual">Senha Atual</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="novaSenha" type="password" class="validate" ng-model="novaSenha" required>
+                            <label for="novaSenha">Nova Senha</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <input id="confirmarNovaSenha" type="password" class="validate" ng-model="confirmarNovaSenha" required>
+                            <label for="confirmarNovaSenha">Confirmar Nova Senha</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <div class="input-field">
+                            <a href="#/configuracao" class="waves-effect waves-light btn orange darken-4">Cancelar</a>
+                            <button type="submit" class="right waves-effect waves-light btn orange darken-4">Alterar</button>                            
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-	</main>
+    </main>
 </div>

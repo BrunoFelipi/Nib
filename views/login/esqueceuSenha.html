@@ -10,13 +10,13 @@ $(document).ready(function() {
     <header>
         <nav class="nav-wrapper orange darken-4">
             <div class="nav-wrapper">
-                <a href="#/login" class="brand-logo light center">Login</a>
+                <a href="#/login" class="brand-logo light center">Nibbles</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <form name="formulario" ng-submit="logar()">
+        <form name="formulario" ng-submit="enviarEmail()">
 
             <div class="container" style="padding-top: 50px">
                 <div class="row">
@@ -32,11 +32,7 @@ $(document).ready(function() {
                                         <input id="email" type="email" name="email" class="validate" ng-model="email" required>
                                         <label for="email">E-mail</label>
                                     </div>
-                                    <div class="input-field">
-                                        <input id="senha" type="password" name="senha" class="validate" ng-model="senha" required>
-                                        <label for="senha">Senha</label>
-                                    </div>
-
+                                
                                     <div class="card-action">
                                         <a href="#/login" class="orange-text btn-flat waves-effect waves-orange center s12 m12 l12">Voltar</a>
                                         <button type="submit" class="right btn-flat orange-text waves-effect waves-orange center s12 m12 l12">Enviar Email</button>

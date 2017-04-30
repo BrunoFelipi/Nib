@@ -11,7 +11,7 @@ app.config(function($routeProvider){
     })
     .when('/esqueceuSenha', {
         templateUrl: 'views/login/esqueceuSenha.html',
-		controller: 'loginCtrl'
+		controller: 'esqueceuSenhaCtrl'
     })
 	//CARDÁPIO
     .when('/cardapio', {
@@ -51,10 +51,10 @@ app.config(function($routeProvider){
     })
     .when('/alterarSenha', {
         templateUrl: 'views/configuracao/alterarSenha.html',
-		controller: 'configuracaoCtrl'
+		controller: 'alterarSenhaCtrl'
     })
     .when('/inserirUsuario', {
         templateUrl: 'views/configuracao/inserirUsuario.html',
-		controller: 'configuracaoCtrl'
+		controller: 'inserirUsuarioCtrl'
     })
 });
