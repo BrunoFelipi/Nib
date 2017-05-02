@@ -69,6 +69,14 @@ app.factory('ProdutoService', function($http, $rootScope, $location){
             });
         },
 		
+        editProduto: function(id, nomePrato, descricao, valor, imagemname){
+            return $http({
+                method: 'post',
+                url: 'ws/produto/editProduto.php',
+                data: {id: id, nomePrato: nomePrato, descricao: descricao, valor: valor, imagemname: imagemname}
+            });
+        },
+
 		copyFile: function(file){
             return $http({
 				method: 'post',

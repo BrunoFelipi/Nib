@@ -11,6 +11,7 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 		var promise = ProdutoService.getAll();
 		promise.then(function(response){		
 			$scope.produtosPromocao = response.data;
+			console.log(response.data);
 		}, function(error){
 			Materialize.toast('Erro de conexão com o servidor',2000);
 		});

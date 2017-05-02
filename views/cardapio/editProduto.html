@@ -1,7 +1,10 @@
 <script type="text/javascript">
+
 $(document).ready(function() {
     
-	$('#pesquisa').focus();
+	$('#descricao').focus();
+	$('#valor').focus();
+	$('#nomePrato').focus();
 	$('select').material_select();
     $(".button-collapse").sideNav();
     $('.button-collapse').sideNav('hide');
@@ -9,8 +12,8 @@ $(document).ready(function() {
 	
 	$('.tooltipped').tooltip({delay: 50});
 	$('.modal-trigger').leanModal();
-	
 });
+
 </script>
 
 <style media="screen">
@@ -52,22 +55,22 @@ $(document).ready(function() {
 			<hr>
 
 			<div class="row">
-				<form class="col s12 m12 l12" ng-submit="cadastrarProduto()" method="post">
+				<form class="col s12 m12 l12" ng-submit="editarProduto()">
 					<div class="row">
 						<br>
 						<div class="input-field col s12 m12 l12">
-							<input id="nomePrato" ng-model="nomeProduto" value="{{nomeProduto}}" type="text" class="validate" required>
-							<label for="nomePrato">Nome do prato</label>
+							Nome do Prato
+							<input id="nomePrato" type="text" class="validate" required>							
 						</div>
 						<div class="input-field col s12 m12 l12">
-							<textarea id="descricao" ng-model="descricao" class="materialize-textarea" required></textarea>
-							<label for="descricao">Descrição</label>
+							Descrição
+							<textarea id="descricao" class="materialize-textarea" required></textarea>							
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="valor" type="number" ng-model="valor" class="validate" value="0.00" min="1" required>
-							<label for="valor">Preço R$</label>
+							Preço R$
+							<input id="valor" type="number" class="validate" min="1" required>
 						</div>
 					</div>
 					<br>
@@ -77,12 +80,12 @@ $(document).ready(function() {
 							<input type="file">
 						</div>
 						<div class="file-path-wrapper">
-							<input class="file-path validate" ng-model="arquivo" type="text" placeholder="Selecione uma imagem do prato" required>
+							<input id="nomeImagem" class="file-path validate" type="text" placeholder="Selecione uma imagem do prato" required>
 						</div>
 					</div>
 					<br>
-					<button class="waves-effect waves-light btn cyan accent-3" type="submit">Cadastrar</button>
-					<button class="waves-effect waves-light btn" ng-click="backCardapioView()">Cancelar</button>
+					<button class="waves-effect waves-light btn cyan accent-3" type="submit">Editar</button>
+					<a href="#/cardapio" class="right waves-effect waves-light btn">Cancelar</a>
 				</form>
 			</div>
 		</div>
