@@ -2,14 +2,13 @@ CREATE TABLE  produto (
   id int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   nome varchar(14),
   descricaoProduto varchar(200),
-  descricaoPromocao varchar(200),
   valor varchar(100),
   promocao char(1) DEFAULT NULL,
   ativo char(1),
   imagemname varchar(200)
 );
 
-insert into produto values (0,"Pratasso","prato teste", 20.00,"s","n","prato1.png","descricaoPromocao");
+insert into produto values (0,"Pratasso","prato teste", 20.00,"s","s","prato1.png");
 
 CREATE TABLE  usuario (
   id int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
