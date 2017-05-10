@@ -44,7 +44,7 @@ $(document).ready(function() {
 		<br>
 		<form ng-submit="sorteio(sortear)">
 			<div class="container">
-				
+
 				<span>Selecione um produto para sortear entre os usuários cadastrados no app.</span>
 				<br><br>
 				<div class="row">
@@ -65,11 +65,35 @@ $(document).ready(function() {
 		</form>
 
 		<div ng-if="usuarioSorteado != null">
-			
-			
-			
-			
-			{{usuarioSorteado}}
+			<div class="row">
+				<hr>
+				<form class="center col s12" ng-submit="confirmarSorteio()">
+					<div class="row">
+						<div class="input-field col s12 m12 l6 offset-l3">
+							Nome Usuário
+							<input placeholder="Nome Usuário" id="nome" type="text" class="validate" value="{{usuarioSorteado.nomeUsuario}}">							
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 m12 l6 offset-l3">
+							Email
+							<input value="{{usuarioSorteado.email}}" id="email" type="email" class="validate">
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12 m12 l6 offset-l3">
+							Número celular
+							<input id="numeroCelular" type="text" class="validate" value="{{usuarioSorteado.numeroCelular}}">							
+						</div>
+					</div>
+
+					<button type="submit" class="btn waves-effect">Confirmar?</button>
+
+				</form>
+			</div>
+
+
+			<!--{{usuarioSorteado}}-->
 
 
 

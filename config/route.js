@@ -39,6 +39,10 @@ app.config(function($routeProvider){
         templateUrl: 'views/sorteio/realizarSorteio.html',
 		controller: 'realizarSorteioCtrl'
     })
+    .when('/sorteio/detalhes/:id', {
+        templateUrl: 'views/sorteio/detalhesProdutoSorteio.html',
+		controller: 'detalhesProdutoSorteioCtrl'
+    })
 	//USUÁRIOS
     .when('/usuarios', {
         templateUrl: 'views/usuarios/usuarios.html',

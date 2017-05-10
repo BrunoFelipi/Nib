@@ -63,4 +63,8 @@ app.controller('sorteioCtrl', function ($scope, $rootScope, $location, $routePar
 		
 	}
 
+	$scope.moreInfoProdutoSorteio = function(idProduto){
+		$location.path('sorteio/detalhes/' + idProduto);
+	}
+
 });

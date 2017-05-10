@@ -51,9 +51,7 @@ img {
 				
 				<div class="col s12 m12 l6">
 					Total de <b>{{qtdProdutoPromo}}</b> produtos para sortear
-
-					<a ng-click="openViewRealizarSorteio()" class="left waves-effect waves-light btn">Realizar Sorteio</a>
-
+					<a ng-class="{ 'disabled' : qtdProdutoPromo == 0}" ng-click="openViewRealizarSorteio()" class="left waves-effect waves-light btn">Realizar Sorteio</a>					   
 				</div>
 			</div>
 				
@@ -78,10 +76,16 @@ img {
 								<i class="material-icons">remove_circle_outline</i>
 							</a>
 
+							<a ng-click="moreInfoProdutoSorteio(produtoPromo.id)" class="right waves-effect waves-light btn tooltipped red" data-position="top" data-delay="50" data-tooltip="Detalhes">									
+								<i class="material-icons">info_outline</i>
+							</a>
+
+							<!--
 							<a href="#modal1" ng-click="visualizarUsuarios(produtoPromo.id,produtoPromo.nome,produtoPromo.descricaoProduto,produtoPromo.descricaoPromocao)" class="right waves-effect waves-light btn modal-trigger tooltipped" data-position="top" data-delay="50" data-tooltip="Visualizar Usuários">									
 								<i class="material-icons">supervisor_account</i>
 							</a>
-							
+							-->
+
 						</div>
 						
 						<div class="card-reveal">
