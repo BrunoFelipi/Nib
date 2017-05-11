@@ -49,76 +49,47 @@ img {
                     </div>
                 </div>
 				
-				<div class="col s12 m12 l6">
-					Total de <b>{{qtdProdutoPromo}}</b> produtos para sortear
-					<a ng-class="{ 'disabled' : qtdProdutoPromo == 0}" ng-click="openViewRealizarSorteio()" class="left waves-effect waves-light btn">Realizar Sorteio</a>					   
-				</div>
+				<span class="new badge" data-badge-caption=""><b>{{qtdProdutoPromo}}</b> produto(s) disponível para o sorteio</span>
+				
 			</div>
 				
 			<div class="row">
 				<div class="col s12 m12 l12" ng-repeat="produtoPromo in produtosPromocao | filter: {promocao:'s'} | filter: {ativo:'s'}">
-					<div class="card horizontal medium">
+					<div class="card horizontal small">
 						
 						<div class="card-image">
-							<img class="activator" src="resources/images/{{produtoPromo.imagemname}}" style="height: 300px">
+							<img src="resources/images/{{produtoPromo.imagemname}}" >
 						</div>
 						
 						<div class="card-stacked">
 							<div class="card-content">
-								<span class="card-title activator grey-text text-darken-4">
+								<h4>
 									<b>{{produtoPromo.nome}}</b>
-									<i class="material-icons right">more_vert</i>
-								</span>
-								<p>R$ {{produtoPromo.valor}}</p>
+								</h4>
+
+								<h5>
+									<i>
+										{{produtoPromo.descricaoProduto}}
+									</i>	
+								</h5>
+
+								<div style="padding-top: 70px">
+									<b>R$</b> {{produtoPromo.valor}}
+								</div>	
 							</div>
 
 							<div class="card-action">
-								<a ng-click="removerSorteio(produtoPromo.id)" class="left waves-effect waves-light btn tooltipped" data-position="top" data-delay="50" data-tooltip="Remover do sorteio">									
-									<i class="material-icons">remove_circle_outline</i>
+								<a ng-click="removerSorteio(produtoPromo.id)" class="left waves-effect waves-light btn">									
+									Tirar do Sorteio
 								</a>
 
-								<a ng-click="moreInfoProdutoSorteio(produtoPromo.id)" class="right waves-effect waves-light btn tooltipped red" data-position="top" data-delay="50" data-tooltip="Detalhes">									
-									<i class="material-icons">info_outline</i>
+								<a ng-click="moreInfoProdutoSorteio(produtoPromo.id)" class="right waves-effect waves-light btn">									
+									Detalhes
 								</a>
 							</div>
 						</div>
 					</div>
 				</div>			  
-			</div>
-			
-			<!-- Modal Structure -->
-			<div id="modal1" class="modal bottom-sheet">
-				<div class="modal-content">
-					
-					<b>Produto:</b> {{nomeProdutoSelecionado}}
-					<br>
-					<b>Descrição produto:</b> {{descricaoProdutoSelecionado}}		
-					
-					<h5>Usuários Sorteados</h5>
-					
-					<table class="highlight">
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Email</th>
-								<th>Número Celular</th>
-								<th>Data Sorteio</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr ng-repeat="usuP in usuariosProduto">
-								<td>{{usuP.nomeUsuario}}</td>
-								<td>{{usuP.email}}</td>
-								<td>{{usuP.numeroCelular}}</td>
-								<td>{{usuP.dataSorteio}}</td>
-							</tr>
-						</tbody>
-					</table>					
-					<br>
-					<br>
-					<br>
-				</div>
 			</div>
         </div>		
 	</main>

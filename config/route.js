@@ -35,7 +35,7 @@ app.config(function($routeProvider){
         templateUrl: 'views/sorteio/sorteio.html',
 		controller: 'sorteioCtrl'
     })
-    .when('/realizarsorteio', {
+    .when('/realizarsorteio/:id', {
         templateUrl: 'views/sorteio/realizarSorteio.html',
 		controller: 'realizarSorteioCtrl'
     })

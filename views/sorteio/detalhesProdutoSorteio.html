@@ -50,24 +50,25 @@ $(document).ready(function() {
 			<div class="row">
 				<div class="col s12 m12 l12">
 
-					<p>
-						<b>Produto:</b>
-						<br>
-						{{produto.nome}}
-					</p>
+					<table>
+						<thead>
+							<tr>
+								<th>Produto</th>
+								<th>Descrição</th>
+								<th>Valor</th>								
+							</tr>
+						</thead>
 
-					<p>
-						<b>Descrição:</b>
-						<br>
-						{{produto.descricaoProduto}}
-					</p>
-
-					<p>
-						<b>Valor:</b>
-						<br>
-						R$ {{produto.valor}}
-					</p>
-
+						<tbody>
+							<tr>
+								<td><i>{{produto.nome}}</i></td>
+								<td><i>{{produto.descricaoProduto}}</i></td>
+								<td>R$ <i>{{produto.valor}}</i></td>
+							</tr>							
+						</tbody>
+					</table>
+					<br>
+					<br>
 					<table class="highlight">
 						<thead>
 							<tr>
@@ -87,6 +88,10 @@ $(document).ready(function() {
 							</tr>							
 						</tbody>
 					</table>
+
+					<br>
+					<a ng-click="openViewRealizarSorteio()" class="left waves-effect waves-light btn">Realizar Sorteio</a>					   
+
 				</div>
 			</div>
 		</div>

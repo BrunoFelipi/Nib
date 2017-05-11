@@ -7,10 +7,9 @@
     $valor = $data['valor'];
     $promocao = $data['promocao'];
     $ativo = $data['ativo'];
-    $imagemname = $data['imagemname'];
-	$descricaoPromocao = '';
+    $imagemname = $data['imagemname'];	
     
-    $sql = "INSERT INTO produto VALUES (0,'$nomePrato','$descricao','$descricaoPromocao','$valor','$promocao','$ativo','$imagemname')";
+    $sql = "INSERT INTO produto VALUES (0,'$nomePrato','$descricao','$valor','$promocao','$ativo','$imagemname')";
     $rs = mysqli_query($conexao, $sql);
 
     if($rs){

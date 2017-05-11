@@ -2,38 +2,29 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 
 	SessaoService.validar();
 
-	$scope.produtosPromocao = [];
+	$scope.produto = [];
 	$scope.usuarios = [];
 	$scope.usuarioSorteado = null;
 
-	var init = function () {
+	var promise = ProdutoService.getProduto($routeParams.id);
+	promise.then(function (response) {
+		$scope.produto = response.data[0];			
+	}, function (error) {
+		Materialize.toast('Erro de conexão com o servidor', 4000);
+	});
 
-		var promise = ProdutoService.getAll();
-		promise.then(function (response) {
-			$scope.produtosPromocao = response.data;
-		}, function (error) {
-			Materialize.toast('Erro de conexão com o servidor', 2000);
-		});
+	var promise = UsuarioService.getAll();
+	promise.then(function (response) {
+		$scope.usuarios = response.data;			
+	}, function (error) {
+		Materialize.toast('Erro de conexão com o servidor', 2000);
+	});
 
-		var promise = UsuarioService.getAll();
-		promise.then(function (response) {
-			$scope.usuarios = response.data;
-		}, function (error) {
-			Materialize.toast('Erro de conexão com o servidor', 2000);
-		});
+	
 
-	}
+	$scope.sorteio = function () {
 
-	init();
-
-	$scope.sorteio = function (sortear) {
-
-		if (sortear === undefined) {
-			Materialize.toast('Selecione um produto para o<br>sorteio', 2000);
-			return;
-		}
-
-		var promise = ProdutoService.getProdutoByNome(sortear.nome);
+		var promise = ProdutoService.getProdutoByNome($scope.produto.nome);
 		promise.then(function (response) {
 			$scope.produtoSorteado = response.data[0];
 

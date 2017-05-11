@@ -39,10 +39,6 @@ app.controller('sorteioCtrl', function ($scope, $rootScope, $location, $routePar
 		
 	}
 	
-	$scope.openViewRealizarSorteio = function(){
-		$location.path("realizarsorteio");
-	}
-
 	$scope.removerSorteio = function(id,n){
 		
 		var promise = ProdutoService.alterarPromoProduto(id,'n');

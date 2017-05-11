@@ -14,7 +14,6 @@ app.controller('detalhesProdutoSorteioCtrl', function ($scope, $rootScope, $rout
 			var promise = SorteioService.getUsersProduto($scope.produto.id);
 			promise.then(function (response) {
 				$scope.usuariosProduto = response.data;
-				console.log($scope.usuariosProduto);
 			}, function (error) {
 				Materialize.toast('Erro de conexão com o servidor', 2000);
 			});
@@ -25,6 +24,10 @@ app.controller('detalhesProdutoSorteioCtrl', function ($scope, $rootScope, $rout
 	}
 
 	init();
+
+	$scope.openViewRealizarSorteio = function(){
+		$location.path("realizarsorteio/" + $scope.produto.id);
+	}
 
 
 });
