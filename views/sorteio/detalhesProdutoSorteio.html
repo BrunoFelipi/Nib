@@ -40,7 +40,7 @@ $(document).ready(function() {
 <div class="footer-flex">
 	<!-- Header -->
 	<header>
-		<tn-Nav selected="cardapio"></tn-Nav>
+		<tn-Nav selected="sorteio"></tn-Nav>
 	</header>
 
 	<!-- Main -->
@@ -50,9 +50,25 @@ $(document).ready(function() {
 			<div class="row">
 				<div class="col s12 m12 l12">
 
-					
+					<p>
+						<b>Produto:</b>
+						<br>
+						{{produto.nome}}
+					</p>
 
-					<table>
+					<p>
+						<b>Descrição:</b>
+						<br>
+						{{produto.descricaoProduto}}
+					</p>
+
+					<p>
+						<b>Valor:</b>
+						<br>
+						R$ {{produto.valor}}
+					</p>
+
+					<table class="highlight">
 						<thead>
 							<tr>
 								<th>Nome</th>
