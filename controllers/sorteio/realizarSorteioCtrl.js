@@ -20,8 +20,6 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 		Materialize.toast('Erro de conexão com o servidor', 2000);
 	});
 
-	
-
 	$scope.sorteio = function () {
 
 		var promise = ProdutoService.getProdutoByNome($scope.produto.nome);
@@ -50,7 +48,7 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 
 				if (response.data === 'true') {
 					Materialize.toast('Sorteio realizado', 2000);
-					$location.path('cardapio');
+					$location.path('sorteio');
 				} else {
 					Materialize.toast('Erro ao inserir usuário sorteado na base.', 2000);
 				}
