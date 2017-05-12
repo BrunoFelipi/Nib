@@ -17,7 +17,11 @@ CREATE TABLE  usuario (
   email varchar(200),
   token varchar(32),
   numeroCelular varchar(100),
+<<<<<<< HEAD
   idCelular varchar(100)
+=======
+  logado varchar(5)  
+>>>>>>> origin/master
 );
 
 insert into usuario values (0,"Bruno Souza","senha","bruno.souza@senior.com.br","token", "47 99618-4248","1568748");
