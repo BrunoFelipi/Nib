@@ -34,26 +34,25 @@ $(document).ready(function() {
 	<!-- Main -->
 	<main>
 		<br>
-		<form ng-submit="sorteio()">
-			<div class="container">
+	
+		<div class="container">
 
-				<span>Sorteie o produto <b>{{produto.nome}}</b> entre os usuários que estão cadastrados no app.</span>
-				<br><br>
-				
+			<span>Sorteie o produto <b>{{produto.nome}}</b> entre os usuários que estão cadastrados no app.</span>
+			<br><br>
 			
-				<div class="chip">
-					<img src="resources/images/{{produto.imagemname}}" alt="Contact Person">
-					{{produto.nome}}
-				</div>					
+		
+			<div class="chip">
+				<img src="resources/images/{{produto.imagemname}}" alt="Contact Person">
+				{{produto.nome}}
+			</div>					
 
-				<br>
-				<br>
-				<br>
-
-				<button type="submit" class="btn waves-effect">Sortear Produto</button>
-				<a href="#/sorteio/detalhes/{{produto.id}}" class="btn waves-effect right">Voltar</a>
-			</div>
-		</form>
+			<br>
+			<br>
+			<br>				
+			<button ng-class="{ 'disabled' : usuarios.length == 0}" ng-click="sorteio()" type="submit" class="btn waves-effect">Sortear Produto</button>
+			<a href="#/sorteio/detalhes/{{produto.id}}" class="btn waves-effect right">Voltar</a>
+		</div>
+		
 
 		<div ng-if="usuarioSorteado != null">
 			<div class="row">

@@ -15,13 +15,18 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 
 	var promise = UsuarioService.getAll();
 	promise.then(function (response) {
-		$scope.usuarios = response.data;			
+		$scope.usuarios = response.data;	
+
+		if($scope.usuarios.length == 0){
+			Materialize.toast('Não existe nenhum usuário<br>cadastrado no app', 2000);
+		}	
+
 	}, function (error) {
 		Materialize.toast('Erro de conexão com o servidor', 2000);
 	});
 
 	$scope.sorteio = function () {
-
+		
 		var promise = ProdutoService.getProdutoByNome($scope.produto.nome);
 		promise.then(function (response) {
 			$scope.produtoSorteado = response.data[0];
@@ -30,36 +35,40 @@ app.controller('realizarSorteioCtrl', function ($scope, $rootScope, $location, $
 			var random = Math.floor(Math.random() * qtdUsuarios) + 1;
 
 			for (var i = 0; i < qtdUsuarios; i++) {
-
 				if ($scope.usuarios[i].id == random) {
 					$scope.usuarioSorteado = $scope.usuarios[i];
 				}
-			}
+			}			
 
 		}, function (error) {
 			Materialize.toast('Erro ao buscar produto para sortear.', 2000);
 		});
+	}
 
+	//PUSH Notification
+	$scope.notificarUsuarioSorteado = function(){
 
-		$scope.confirmarSorteio = function () {
-
-			var promise = SorteioService.addUsuarioSorteado($scope.usuarioSorteado.id, $scope.produtoSorteado.id);
-			promise.then(function (response) {
-
-				if (response.data === 'true') {
-					Materialize.toast('Sorteio realizado', 2000);
-					$location.path('sorteio');
-				} else {
-					Materialize.toast('Erro ao inserir usuário sorteado na base.', 2000);
-				}
-
-			}, function (error) {
-				Materialize.toast('Erro de conexão com o servidor', 2000);
-			});
-
-		}
-
-
+		alert($scope.usuarioSorteado.idCelular);
 
 	}
+
+	$scope.confirmarSorteio = function () {
+
+		var promise = SorteioService.addUsuarioSorteado($scope.usuarioSorteado.id, $scope.produtoSorteado.id);
+		promise.then(function (response) {
+
+			if (response.data === 'true') {
+				Materialize.toast('Sorteio realizado', 2000);
+				$scope.notificarUsuarioSorteado();
+				$location.path('sorteio');
+			} else {
+				Materialize.toast('Erro ao inserir usuário sorteado na base.', 2000);
+			}
+
+		}, function (error) {
+			Materialize.toast('Erro de conexão com o servidor', 2000);
+		});
+
+	}
+
 });

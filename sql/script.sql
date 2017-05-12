@@ -16,10 +16,11 @@ CREATE TABLE  usuario (
   senha varchar(100),
   email varchar(200),
   token varchar(32),
-  numeroCelular varchar(100)  
+  numeroCelular varchar(100),
+  idCelular varchar(100)
 );
 
-insert into usuario values (0,"Bruno Souza","senha","bruno.souza@senior.com.br", "47 99618-4248");
+insert into usuario values (0,"Bruno Souza","senha","bruno.souza@senior.com.br","token", "47 99618-4248","1568748");
 
 CREATE TABLE  sorteio (
   id int(8) NOT NULL AUTO_INCREMENT PRIMARY KEY,
